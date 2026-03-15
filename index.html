@@ -9,7 +9,6 @@
     <script src="./js/exercise3.js" defer></script>
     <script src="./js/exercise4.js" defer></script>
     <script src="./js/exercise5.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
     class="bg-gradient-to-br from-indigo-500 to-pink-500 min-h-screen py-10"
@@ -19,6 +18,7 @@
     </h1>
     <main class="max-w-2xl mx-auto px-4">
       <div class="space-y-6">
+        <!-- exercise 1 -->
         <section
           class="bg-white p-6 rounded-xl h-50 shadow-sm border border-slate-200"
         >
@@ -40,6 +40,138 @@
             </button>
           </div>
           <p id="ex1_output" class="mt-4 text-blue-600 font-bold hidden"></p>
+        </section>
+
+        <!-- exercise 2 -->
+        <section
+          class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6"
+        >
+          <h2 class="text-lg font-semibold text-slate-700 mb-4">
+            2. Calculate Average
+          </h2>
+          <div class="grid grid-cols-5 gap-2 mb-4">
+            <input
+              id="num1"
+              type="number"
+              class="border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="1st"
+            />
+            <input
+              id="num2"
+              type="number"
+              class="border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="2nd"
+            />
+            <input
+              id="num3"
+              type="number"
+              class="border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="3rd"
+            />
+            <input
+              id="num4"
+              type="number"
+              class="border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="4th"
+            />
+            <input
+              id="num5"
+              type="number"
+              class="border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="5th"
+            />
+          </div>
+          <button
+            id="ex2_btn"
+            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Calculate Average
+          </button>
+          <p id="ex2_output" class="mt-4 text-blue-600 font-bold hidden"></p>
+        </section>
+
+        <!-- exercise 3 -->
+        <section
+          class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6"
+        >
+          <h2 class="text-lg font-semibold text-slate-700 mb-4">
+            3. Currency Converter (USD to VND)
+          </h2>
+          <div class="flex gap-4 items-end">
+            <input
+              id="usd_input"
+              type="number"
+              class="w-full border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="Enter USD amount"
+            />
+            <button
+              id="ex3_btn"
+              class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+            >
+              Convert
+            </button>
+          </div>
+          <p id="ex3_output" class="mt-4 text-blue-600 font-bold hidden"></p>
+        </section>
+
+        <!-- exercise 4 -->
+        <section
+          class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6"
+        >
+          <h2 class="text-lg font-semibold text-slate-700 mb-4">
+            4. Rectangle Calculator
+          </h2>
+          <div class="flex gap-4 mb-4">
+            <input
+              id="length_input"
+              type="number"
+              class="w-1/2 border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="Length"
+            />
+            <input
+              id="width_input"
+              type="number"
+              class="w-1/2 border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="Width"
+            />
+          </div>
+          <button
+            id="ex4_btn"
+            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Calculate
+          </button>
+          <div
+            id="ex4_output"
+            class="mt-4 text-blue-600 font-bold hidden space-y-1"
+          >
+            <p id="area_result"></p>
+            <p id="perimeter_result"></p>
+          </div>
+        </section>
+
+        <!-- exercise 05 -->
+        <section
+          class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6"
+        >
+          <h2 class="text-lg font-semibold text-slate-700 mb-4">
+            5. Sum of 2-Digit Number
+          </h2>
+          <div class="flex gap-4 items-end">
+            <input
+              id="num_input"
+              type="number"
+              class="w-full border-b-2 border-slate-300 p-2 outline-none"
+              placeholder="Enter a 2-digit number"
+            />
+            <button
+              id="ex5_btn"
+              class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+            >
+              Sum
+            </button>
+          </div>
+          <p id="ex5_output" class="mt-4 text-blue-600 font-bold hidden"></p>
         </section>
       </div>
     </main>
