@@ -1,16 +1,29 @@
-const btn3 = document.getElementById("ex3_btn");
-btn3.addEventListener("click", () => {
-  const usd = parseFloat(document.getElementById("usd_input").value);
-  const exchangeRate = 23500;
+const btn = document.getElementById("ex3_btn");
+const resetBtn = document.getElementById("resetBtn3");
+const display = document.getElementById("ex3_output");
+const input = document.getElementById("usd_input");
+// reset
+const reset = () =>{
+  display.innerText = "0 đ";
+  input.value = "";
+}
+
+resetBtn.addEventListener("click", reset);
+
+btn.addEventListener("click", () => {
+  const usd = input.valueAsNumber;
+  const exchangeRate = 26300;
 
   if (isNaN(usd) || usd < 0) {
     alert("Please enter a valid positive number!");
+    reset();
     return;
   }
 
   const vnd = usd * exchangeRate;
 
-  const display = document.getElementById("ex3_output");
-  display.innerText = `Result: ${vnd.toLocaleString()} VND`;
-  display.classList.remove("hidden");
+  display.innerText = `${vnd.toLocaleString("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  })}`;
 });

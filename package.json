@@ -1,0 +1,28 @@
+{
+  "name": "js-exercises-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DucNguyen1402-dev/js-exercises-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DucNguyen1402-dev/js-exercises-/issues"
+  },
+  "homepage": "https://github.com/DucNguyen1402-dev/js-exercises-#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0"
+  }
+}

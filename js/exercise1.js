@@ -1,11 +1,35 @@
-const btn1 = document.getElementById("ex1_btn");
-btn1.addEventListener("click", () => {
-  const days = Number(document.getElementById("ex1_input").value);
-  const rate = 100000;
+const btn = document.getElementById("ex1_btn");
+const input = document.getElementById("ex1_input");
+const display = document.getElementById("ex1_output");
+const resetBtn = document.getElementById("resetBtn1");
 
-  const salary = days * rate;
+const RATE = 100000;
 
-  const display = document.getElementById("ex1_output");
-  display.innerText = `Total Salary: ${salary.toLocaleString()} VND`;
-  display.classList.remove("hidden");
+const reset = () => {
+  display.innerText = "0 đ";
+  input.value = "";
+};
+
+resetBtn.addEventListener("click", reset);
+
+// calculate
+btn.addEventListener("click", () => {
+  const days = input.valueAsNumber;
+
+  if (Number.isNaN(days)) {
+    alert("Your input value is not a number! Please Try again.");
+    reset();
+    return;
+  }
+  if (days <= 0) {
+    alert("The days can't be nagative! Please enter a valid positive number");
+    reset();
+    return;
+  }
+
+  const salary = days * RATE;
+  display.innerText = `${salary.toLocaleString("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  })}`;
 });

@@ -1,14 +1,36 @@
-const btn2 = document.getElementById("ex2_btn");
-btn2.addEventListener("click", () => {
-  const n1 = parseFloat(document.getElementById("num1").value) || 0;
-  const n2 = parseFloat(document.getElementById("num2").value) || 0;
-  const n3 = parseFloat(document.getElementById("num3").value) || 0;
-  const n4 = parseFloat(document.getElementById("num4").value) || 0;
-  const n5 = parseFloat(document.getElementById("num5").value) || 0;
+const btn = document.getElementById("ex2_btn");
+const resetBtn = document.getElementById("resetBtn2");
+const display = document.getElementById("ex2_output");
 
-  const average = (n1 + n2 + n3 + n4 + n5) / 5;
+const listInput = Array.from({ length: 5 }, (_, i) =>
+  document.getElementById(`num${i + 1}`),
+);
 
-  const display = document.getElementById("ex2_output");
-  display.innerText = `Average Result: ${average.toFixed(2)}`;
-  display.classList.remove("hidden");
+const reset = () => {
+  display.innerText = "0";
+  listInput.forEach((input) => input.value = "");
+};
+
+resetBtn.addEventListener("click", reset);
+
+// calculate
+btn.addEventListener("click", () => {
+  const emptyInputs = listInput.filter((input) => input.value.trim() === "");
+
+  if (emptyInputs.length !== 0) {
+    for (const emptyInput of emptyInputs) {
+      emptyInput.classList.add("bg-rose-500", "text-white");
+    }
+    return;
+  } else {
+    for (const input of listInput) {
+      input.classList.remove("bg-rose-500", "text-white");
+    }
+  }
+
+  const numbers = listInput.map((input) => parseFloat(input.value) || 0);
+
+  const average = numbers.reduce((sum, n) => sum + n, 0) / numbers.length;
+
+  display.innerText = average.toFixed(2);
 });

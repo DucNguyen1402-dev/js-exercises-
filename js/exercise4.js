@@ -1,19 +1,33 @@
 const btn4 = document.getElementById("ex4_btn");
-btn4.addEventListener("click", () => {
-  const length = parseFloat(document.getElementById("length_input").value);
-  const width = parseFloat(document.getElementById("width_input").value);
+const lengthInput = document.getElementById("length_input");
+const widthInput = document.getElementById("width_input");
+const resetBtn = document.getElementById("resetBtn4");
+const areaResult = document.getElementById("area_result");
+const perimeterResult = document.getElementById("perimeter_result");
 
-  if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+
+const reset = () => {
+  lengthInput.value = "";
+  widthInput.value = "";
+  areaResult.textContent = "0";
+  perimeterResult.textContent = "0";
+};
+
+const isInvalid = (...nums) =>
+  nums.some(n => isNaN(n) || n <= 0);
+
+resetBtn.addEventListener("click", reset);
+
+btn4.addEventListener("click", () => {
+  const { valueAsNumber: length } = lengthInput;
+  const { valueAsNumber: width } = widthInput;
+
+  if (isInvalid(length, width)) {
     alert("Please enter valid positive numbers!");
+    reset();
     return;
   }
 
-  const area = length * width;
-  const perimeter = (length + width) * 2;
-
-  const container = document.getElementById("ex4_output");
-  document.getElementById("area_result").innerText = `Area: ${area}`;
-  document.getElementById("perimeter_result").innerText =
-    `Perimeter: ${perimeter}`;
-  container.classList.remove("hidden");
+  areaResult.textContent = length * width;
+  perimeterResult.textContent = 2 * (length + width);
 });
