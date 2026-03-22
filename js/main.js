@@ -23,7 +23,7 @@ cards.forEach((card) => {
 
     setTimeout(() => {
       card.classList.add("active-card");
-      card.classList.remove("opacity-50");
+      card.querySelector(".backdrop").classList.add("-translate-y-full");
       document.body.classList.add("overflow-hidden"); 
     }, 10);
   });
@@ -34,8 +34,11 @@ function closeCard() {
   if (!activeCard) return;
 
   activeCard.classList.remove("active-card");
-  activeCard.classList.add("opacity-50");
+   activeCard.querySelector(".backdrop").classList.remove("-translate-y-full");
+  activeCard.querySelector(".reset").click();
+
   document.body.classList.remove("overflow-hidden"); // khi mở
+
   // remove placeholder
   if (placeholder) {
     placeholder.remove();

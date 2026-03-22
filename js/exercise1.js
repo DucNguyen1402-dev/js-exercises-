@@ -1,8 +1,9 @@
 const btn = document.getElementById("ex1_btn");
 const input = document.getElementById("ex1_input");
 const display = document.getElementById("ex1_output");
-const resetBtn = document.getElementById("resetBtn1");
+const resetBtn = btn.closest(".card").querySelector(".reset");
 
+console.log(resetBtn);
 const RATE = 100000;
 
 const reset = () => {

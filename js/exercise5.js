@@ -1,8 +1,8 @@
-const btn5 = document.getElementById("ex5_btn");
+const btn = document.getElementById("ex5_btn");
 const tens = document.getElementById("tens");
 const units = document.getElementById("units");
 const result = document.getElementById("result");
-const resetBtn = document.getElementById("resetBtn5");
+const resetBtn =  btn.closest(".card").querySelector(".reset");
 const input = document.getElementById("num_input");
 
 const reset = () => {
@@ -14,7 +14,7 @@ const reset = () => {
 
 resetBtn.addEventListener("click", reset);
 
-btn5.addEventListener("click", () => {
+btn.addEventListener("click", () => {
   const number = parseInt(input.value);
 
   if (isNaN(number) || number < 10 || number > 99) {

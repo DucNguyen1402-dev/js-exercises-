@@ -1,7 +1,7 @@
-const btn4 = document.getElementById("ex4_btn");
+const btn = document.getElementById("ex4_btn");
 const lengthInput = document.getElementById("length_input");
 const widthInput = document.getElementById("width_input");
-const resetBtn = document.getElementById("resetBtn4");
+const resetBtn =  btn.closest(".card").querySelector(".reset");
 const areaResult = document.getElementById("area_result");
 const perimeterResult = document.getElementById("perimeter_result");
 
@@ -18,7 +18,7 @@ const isInvalid = (...nums) =>
 
 resetBtn.addEventListener("click", reset);
 
-btn4.addEventListener("click", () => {
+btn.addEventListener("click", () => {
   const { valueAsNumber: length } = lengthInput;
   const { valueAsNumber: width } = widthInput;
 

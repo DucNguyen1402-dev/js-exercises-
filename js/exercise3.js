@@ -1,5 +1,5 @@
 const btn = document.getElementById("ex3_btn");
-const resetBtn = document.getElementById("resetBtn3");
+const resetBtn =  btn.closest(".card").querySelector(".reset");
 const display = document.getElementById("ex3_output");
 const input = document.getElementById("usd_input");
 // reset

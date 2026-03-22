@@ -1,5 +1,6 @@
 const btn = document.getElementById("ex2_btn");
-const resetBtn = document.getElementById("resetBtn2");
+const resetBtn =  btn.closest(".card").querySelector(".reset");
+
 const display = document.getElementById("ex2_output");
 
 const listInput = Array.from({ length: 5 }, (_, i) =>

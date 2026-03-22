@@ -21,193 +21,195 @@
 
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
-  <body class="bg-linear-to-br from-indigo-500 to-pink-500 min-h-screen py-10 relative">
+  <body class="bg-slate-900 min-h-screen py-10 relative">
     <div class="flex gap-2 justify-center">
       <div class="overflow-hidden w-10">
         <img src="./img/exam.png" alt="exam icon" class="object-contain" />
       </div>
 
-      <h1 class="text-4xl font-bold text-center mb-8 text-white">
+      <h1 class="text-4xl font-bold text-center mb-8 tracking-wide text-white">
         My JS Exercises
       </h1>
     </div>
-    <main class="flex flex-wrap justify-between items-center gap-5 max-w-7xl mx-auto  ">
-    
-        <!-- exercise 1 -->
-        <section
-          class="card bg-white opacity-50 p-6 rounded-xl h-56 shadow-sm border border-slate-200 relative w-150
-
-          transition-all duration-500 ease-in-out
-          "
+    <main
+      class="flex flex-wrap justify-between items-center gap-5 max-w-7xl mx-auto"
+    >
+      <!-- exercise 1 -->
+      <section
+        class="card bg-white p-6 rounded-xl h-56 shadow-sm border border-slate-200 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+      >
+        <p class="mb-8 text-gray-400">
+          Enter the number of working days to instantly calculate the total
+          salary, based on a fixed daily rate of 100,000.
+        </p>
+        <div class="flex gap-4 items-end">
+          <input
+            id="ex1_input"
+            type="number"
+            class="w-full border-b-2 border-slate-300 focus:border-indigo-500 outline-none p-2 placeholder:text-gray-400"
+            placeholder="Days worked"
+          />
+          <button
+            id="ex1_btn"
+            class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
+          >
+            Calculate
+          </button>
+        </div>
+        <div class="flex gap-2 items-center mt-4 mb-6">
+          <span class="font-bold text-gray-500 tracking-wide"
+            >Total Salary:</span
+          >
+          <span
+            id="ex1_output"
+            class="font-bold text-white px-2 py-1 shadow-sm rounded-sm bg-cyan-500"
+            >0 đ</span
+          >
+        </div>
+        <button
+          class="reset bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
+        >
+          reset
+        </button>
+        <div
+          class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
         >
           <h2
-            class="text-xl tracking-wide font-bold text-slate-800 mb-8 text-center"
+            class="text-xl tracking-wide font-bold text-white mb-8 text-center"
           >
             01. SALARY CALCULATOR
           </h2>
-          <div class="flex gap-4 items-end">
-            <input
-              id="ex1_input"
-              type="number"
-              class="w-full border-b-2 border-slate-300 focus:border-indigo-500 outline-none p-2 placeholder:text-gray-400"
-              placeholder="Days worked"
-            />
-            <button
-              id="ex1_btn"
-              class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
-            >
-              Calculate
-            </button>
-          </div>
-          <div class="flex gap-2 items-center mt-4 mb-6">
-            <span class="font-bold text-gray-500 tracking-wide"
-              >Total Salary:</span
-            >
-            <span
-              id="ex1_output"
-              class="font-bold text-white px-2 py-1 shadow-sm rounded-sm bg-cyan-500"
-              >0 đ</span
-            >
+        </div>
+      </section>
 
-            
-          </div>
-            <button
-            id="resetBtn1"
-            class="bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
-          >
-            reset
-          </button>
-        </section>
-
-        <!-- exercise 2 -->
-        <section
-          class="card bg-white   opacity-50 relative p-6 rounded-xl h-64 shadow-sm border border-slate-200 
-          mt-6 w-150
-          transition-all duration-500 ease-in-out
-          "
+      <!-- exercise 2 -->
+      <section
+        class="card bg-white relative p-6 rounded-xl h-64 shadow-sm border border-slate-200 mt-6 w-150 overflow-hidden transition-all duration-500 ease-in-out"
+      >
+        <p class="mb-8 text-gray-400">
+          Enter five numbers to quickly calculate their average value.
+        </p>
+        <div class="grid grid-cols-5 gap-2 mb-6">
+          <input
+            id="num1"
+            type="number"
+            class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
+            placeholder="1st"
+          />
+          <input
+            id="num2"
+            type="number"
+            class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
+            placeholder="2nd"
+          />
+          <input
+            id="num3"
+            type="number"
+            class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
+            placeholder="3rd"
+          />
+          <input
+            id="num4"
+            type="number"
+            class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
+            placeholder="4th"
+          />
+          <input
+            id="num5"
+            type="number"
+            class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
+            placeholder="5th"
+          />
+        </div>
+        <button
+          id="ex2_btn"
+          class="bg-blue-500 absolute bottom-18 right-5 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-500 cursor-pointer"
         >
-          <h2
-            class="text-xl tracking-wide font-bold text-slate-800 mb-8 text-center"
+          Calculate Average
+        </button>
+
+        <div class="flex gap-2 items-center mt-6">
+          <span class="font-bold text-gray-500 tracking-wide"
+            >Average Result:</span
           >
+          <span
+            id="ex2_output"
+            class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
+            >0</span
+          >
+        </div>
+        <button
+          class="reset bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
+        >
+          reset
+        </button>
+        <div
+          class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
+        >
+          <h2 class="text-xl tracking-wide font-bold text-white text-center">
             02. CALCULATE AVERAGE
           </h2>
-          <div class="grid grid-cols-5 gap-2 mb-6">
-            <input
-              id="num1"
-              type="number"
-              class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
-              placeholder="1st"
-            />
-            <input
-              id="num2"
-              type="number"
-              class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
-              placeholder="2nd"
-            />
-            <input
-              id="num3"
-              type="number"
-              class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
-              placeholder="3rd"
-            />
-            <input
-              id="num4"
-              type="number"
-              class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
-              placeholder="4th"
-            />
-            <input
-              id="num5"
-              type="number"
-              class="border-b-2 border-slate-300 p-2 outline-none placeholder:text-gray-400"
-              placeholder="5th"
-            />
-          </div>
+        </div>
+      </section>
+
+      <!-- exercise 3 -->
+      <section
+        class="card bg-white p-6 rounded-xl h-56 shadow-sm border border-slate-200 mt-6 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+      >
+        <p class="mb-8 text-gray-400">
+          Enter the amount in USD to convert it into VND using a fixed exchange
+          rate of 26,300 VND per USD.
+        </p>
+        <div class="flex gap-4 items-end">
+          <input
+            id="usd_input"
+            type="number"
+            class="w-full border-b-2 border-slate-300 p-2 focus:outline-none focus:border-indigo-500 placeholder:text-gray-400"
+            placeholder="Enter USD amount"
+          />
+
           <button
-            id="ex2_btn"
-            class="bg-blue-500 absolute bottom-18 right-5 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-500 cursor-pointer"
+            id="ex3_btn"
+            class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
           >
-            Calculate Average
+            Convert
           </button>
+        </div>
+        <div class="flex gap-2 items-center mt-6">
+          <span class="font-bold text-gray-500 tracking-wide">Result:</span>
 
-          <div class="flex gap-2 items-center mt-6">
-            <span class="font-bold text-gray-500 tracking-wide"
-              >Average Result:</span
-            >
-            <span
-              id="ex2_output"
-              class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
-              >0</span
-            >
-          </div>
-           <button
-            id="resetBtn2"
-            class="bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
+          <span
+            id="ex3_output"
+            class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
+            >0 đ</span
           >
-            reset
-          </button>
-        </section>
+        </div>
 
-        <!-- exercise 3 -->
-        <section
-          class="card bg-white  opacity-50 p-6 rounded-xl h-50 shadow-sm border border-slate-200 mt-6 
-          relative w-150
-          transition-all duration-500 ease-in-out
-          "
+        <button
+          class="reset bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
         >
-          <h2
-            class="text-xl tracking-wide font-bold text-slate-800 mb-8 text-center"
-          >
+          reset
+        </button>
+        <div
+          class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
+        >
+          <h2 class="text-xl tracking-wide font-bold text-white text-center">
             03. CURRENCY CONVERTED (USD TO VND)
           </h2>
-          <div class="flex gap-4 items-end">
-            <input
-              id="usd_input"
-              type="number"
-              class="w-full border-b-2 border-slate-300 p-2 focus:outline-none focus:border-indigo-500 placeholder:text-gray-400"
-              placeholder="Enter USD amount"
-            />
+        </div>
+      </section>
 
-            <button
-              id="ex3_btn"
-              class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
-            >
-              Convert
-            </button>
-          </div>
-          <div class="flex gap-2 items-center mt-6">
-            <span class="font-bold text-gray-500 tracking-wide">Result:</span>
+      <!-- exercise 4 -->
+      <section
+        class="card bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6 h-68 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+      >
+        <p class="mb-8 text-gray-400">
+          Enter the length and width to calculate the rectangle’s perimeter and
+          area instantly.
+        </p>
 
-            <span
-              id="ex3_output"
-              class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
-              >0 đ</span
-            >
-          </div>
-          
-          <button
-            id="resetBtn3"
-            class="bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
-          >
-            reset
-          </button>
-        </section>
-
-        <!-- exercise 4 -->
-        <section
-          class="card bg-white  opacity-50 p-6 rounded-xl shadow-sm border border-slate-200 mt-6 
-          h-60 relative w-150
-          transition-all duration-500 ease-in-out
-          "
-        >
-          <h2
-            class="text-xl tracking-wide font-bold text-slate-800 mb-8 text-center"
-          >
-            04. RECTANGLE CALCULATOR
-          </h2>
-
-          <div class="flex justify-between items-center">
-             <div class="flex gap-4 mb-4">
+        <div class="flex justify-between items-center">
+          <div class="flex gap-4 mb-4">
             <input
               id="length_input"
               type="number"
@@ -227,110 +229,119 @@
           >
             Calculate
           </button>
-          </div>
-         
-          <button
-            id="resetBtn4"
-            class="bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
-          >
-            reset
-          </button>
-          <div class="mt-6 flex flex-col justify-center gap-3">
-            <div class="flex gap-2 items-center">
-              <span class="font-bold text-gray-500 tracking-wide">Area:</span>
-              <span
-                id="area_result"
-                class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
-                >0</span
-              >
-            </div>
-            <div class="flex gap-2 items-center">
-              <span class="font-bold text-gray-500 tracking-wide"
-                >Perimeter:</span
-              >
-              <span
-                id="perimeter_result"
-                class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
-                >0</span
-              >
-            </div>
-          </div>
-        </section>
+        </div>
 
-        <!-- exercise 05 -->
-        <section
-          class="card bg-white opacity-50  p-6 rounded-xl shadow-sm border 
-          border-slate-200 mt-6 h-50 relative w-150
-          transition-all duration-500 ease-in-out
-          "
+        <button
+          class="reset bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
         >
-          <h2
-            class="text-xl tracking-wide font-bold text-slate-800 mb-8 text-center"
+          reset
+        </button>
+        <div class="mt-6 flex flex-col justify-center gap-3">
+          <div class="flex gap-2 items-center">
+            <span class="font-bold text-gray-500 tracking-wide">Area:</span>
+            <span
+              id="area_result"
+              class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
+              >0</span
+            >
+          </div>
+          <div class="flex gap-2 items-center">
+            <span class="font-bold text-gray-500 tracking-wide"
+              >Perimeter:</span
+            >
+            <span
+              id="perimeter_result"
+              class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
+              >0</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
+        >
+          <h2 class="text-xl tracking-wide font-bold text-white text-center">
+            04. RECTANGLE CALCULATOR
+          </h2>
+        </div>
+      </section>
+
+      <!-- exercise 05 -->
+      <section
+        class="card bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6 h-50 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+      >
+        <p class="mb-8 text-gray-400">
+          Enter a two-digit number to calculate the sum of its digits.
+        </p>
+
+        <div class="flex gap-4 items-end">
+          <input
+            id="num_input"
+            type="number"
+            class="w-full border-b-2 border-slate-300 p-2 focus:border-indigo-500 focus:outline-none placeholder:text-gray-400"
+            placeholder="Enter a 2-digit number"
+          />
+
+          <button
+            id="ex5_btn"
+            class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
           >
+            Sum
+          </button>
+        </div>
+
+        <div class="flex gap-2 items-center mt-6">
+          <div class="flex gap-2 font-bold text-gray-500 tracking-wide">
+            <span>Sum of </span>
+            <span
+              id="tens"
+              class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
+              >0</span
+            >
+            +
+            <span
+              id="units"
+              class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
+              >0</span
+            >
+            =
+            <span
+              id="result"
+              class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
+              >0</span
+            >
+          </div>
+
+          <button
+            id="trashIcon3"
+            class="hidden text-gray-600 cursor-pointer transition duration-200 hover:scale-110"
+          >
+            <span class="fa-solid fa-trash"></span>
+          </button>
+        </div>
+
+        <button
+          class="reset bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
+        >
+          reset
+        </button>
+        <div
+          class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600  to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
+        >
+          <h2 class="text-xl tracking-wide font-bold text-white text-center">
             05. SUM OF 2-DIGIT NUMBER
           </h2>
-
-          <div class="flex gap-4 items-end">
-            <input
-              id="num_input"
-              type="number"
-              class="w-full border-b-2 border-slate-300 p-2 focus:border-indigo-500 focus:outline-none placeholder:text-gray-400"
-              placeholder="Enter a 2-digit number"
-            />
-
-            <button
-              id="ex5_btn"
-              class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition duration-300 cursor-pointer"
-            >
-              Sum
-            </button>
-          </div>
-
-          <div class="flex gap-2 items-center mt-6">
-            <div class="flex gap-2 font-bold text-gray-500 tracking-wide">
-              <span>Sum of </span>
-              <span
-                id="tens"
-                class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
-                >0</span
-              >
-              +
-              <span
-                id="units"
-                class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
-                >0</span
-              >
-              =
-              <span
-                id="result"
-                class="font-bold text-white px-2 shadow-sm rounded-sm bg-cyan-500"
-                >0</span
-              >
-            </div>
-
-            <button
-              id="trashIcon3"
-              class="hidden text-gray-600 cursor-pointer transition duration-200 hover:scale-110"
-            >
-              <span class="fa-solid fa-trash"></span>
-            </button>
-          </div>
-
-          <button
-            id="resetBtn5"
-            class="bg-red-500 absolute bottom-2 text-sm right-2 text-white px-2 py-1 rounded-md hover:bg-red-600 transition duration-300 cursor-pointer"
-          >
-            reset
-          </button>
-        </section>
-
-     
+        </div>
+      </section>
     </main>
-         <div id="backdrop" class="fixed inset-0 bg-slate-900/90 hidden z-40"></div>
-         <div class="flex flex-col gap-2 absolute top-2 right-2 translate-x-5">
-             <span class="text-sm bg-indigo-600 px-4 py-3 rounded-l-full text-white">Click a card to open it</span>
-         <span class=" text-sm bg-indigo-600 px-4 py-3 rounded-l-full text-white">Press ESC to close it</span>
-         </div>
-      
+    <div id="backdrop" class="fixed inset-0 bg-slate-900/90 hidden z-40"></div>
+    <div class="flex flex-col gap-2 absolute top-2 right-2 translate-x-5">
+      <span class="text-sm bg-indigo-600 px-4 py-3 rounded-l-full text-white"
+        >Click a card to open it</span
+      >
+      <span class="text-sm bg-indigo-600 px-4 py-3 rounded-l-full text-white"
+        >Press ESC to close it</span
+      >
+    </div>
   </body>
 </html>
