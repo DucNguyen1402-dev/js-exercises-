@@ -4,13 +4,7 @@
     <meta charset="UTF-8" />
     <title>JS Exercises Collection</title>
     <link rel="icon" type="image/x-icon" href="./src/icon/js.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="./dist/output.css" />
 
     <script type="module" src="./src/js/main.js"></script>
     <script type="module" src="./src/js/exercise1.js"></script>
@@ -18,9 +12,8 @@
     <script type="module" src="./src/js/exercise3.js"></script>
     <script type="module" src="./src/js/exercise4.js"></script>
     <script type="module" src="./src/js/exercise5.js"></script>
-
-    <link rel="stylesheet" href="./dist/output.css" />
   </head>
+
   <body
     class="bg-linear-to-br from-slate-900 via-slate-800 to-slate-700 min-h-screen py-10 relative overflow-x-hidden"
   >
@@ -36,7 +29,7 @@
     <main class="grid grid-cols-3 place-items-center gap-10 max-w-5xl mx-auto">
       <!-- exercise 1 -->
       <article
-        class="card bg-slate-100 p-6 rounded-xl h-56 shadow-sm border-2 border-slate-100 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
+        class="card bg-slate-100 p-6 rounded-xl h-56 shadow-sm border-2 border-slate-100 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform cursor-pointer hover:-translate-y-4"
       >
         <p class="mb-8 text-gray-500">
           Enter the number of working days to instantly calculate the total
@@ -84,7 +77,7 @@
 
       <!-- exercise 2 -->
       <article
-        class="card bg-white relative p-6 rounded-xl h-64 shadow-sm border-2 border-slate-100 w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
+        class="card bg-white relative p-6 rounded-xl h-64 shadow-sm border-2 border-slate-100 w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform cursor-pointer hover:-translate-y-4"
       >
         <p class="mb-8 text-gray-400">
           Enter five numbers to quickly calculate their average value.
@@ -156,7 +149,7 @@
 
       <!-- exercise 3 -->
       <article
-        class="card bg-white p-6 rounded-xl h-56 shadow-sm border-2 border-slate-100 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
+        class="card bg-white p-6 rounded-xl h-56 shadow-sm border-2 border-slate-100 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform cursor-pointer hover:-translate-y-4"
       >
         <p class="mb-8 text-gray-400">
           Enter the amount in USD to convert it into VND using a fixed exchange
@@ -205,7 +198,7 @@
 
       <!-- exercise 4 -->
       <article
-        class="card bg-white p-6 rounded-xl shadow-sm border-2 border-slate-100 h-68 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
+        class="card bg-white p-6 rounded-xl shadow-sm border-2 border-slate-100 h-68 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform cursor-pointer hover:-translate-y-4"
       >
         <p class="mb-8 text-gray-400">
           Enter the length and width to calculate the rectangle's perimeter and
@@ -274,7 +267,7 @@
 
       <!-- exercise 05 -->
       <article
-        class="card bg-white p-6 rounded-xl shadow-sm border-2 border-slate-100 h-50 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
+        class="card bg-white p-6 rounded-xl shadow-sm border-2 border-slate-100 h-50 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform cursor-pointer hover:-translate-y-4"
       >
         <p class="mb-8 text-gray-400">
           Enter a two-digit number to calculate the sum of its digits.
@@ -342,16 +335,16 @@
         </div>
       </article>
     </main>
-    <div id="backdrop" class="fixed inset-0 bg-slate-900/90  hidden z-40"></div>
+    <div id="backdrop" class="fixed inset-0 bg-slate-900/90 hidden z-40"></div>
     <div
-      class="fixed w-14 top-5 right-3 animate-bounce transition duration-2000  round-shape cursor-pointer"
+      class="fixed w-14 top-5 right-3 animate-bounce transition duration-2000 round-shape cursor-pointer"
     >
       <img src="./src/img/round-shape.png" alt="round shape icon" />
     </div>
 
     <div class="flex flex-col gap-2 absolute top-2 right-2">
       <span
-        class="card-guide is-open text-sm bg-blue-600 pl-6 pr-4  py-3 rounded-l-full text-white translate-x-full transition-transform duration-2000 cursor-pointer"
+        class="card-guide is-open text-sm bg-blue-600 pl-6 pr-4 py-3 rounded-l-full text-white translate-x-full transition-transform duration-2000 cursor-pointer"
         >Click a card to open it</span
       >
       <span
