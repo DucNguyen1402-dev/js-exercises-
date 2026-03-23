@@ -7,9 +7,9 @@ const roundShape = document.querySelector(".round-shape");
 
 
 roundShape.addEventListener("click", function () {
-  const isActive = this.classList.toggle("translate-y-200");
+  const isActive = this.classList.toggle("translate-y-150");
 
-  this.classList.toggle("-translate-x-300", isActive);
+  this.classList.toggle("-translate-x-350", isActive);
 
   this.classList.toggle("duration-1000", isActive);
   this.classList.toggle("duration-2000", !isActive);
@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
   showCard(cardGuideOpen);
 
   setTimeout(() => {
-    roundShape.classList.add("-translate-x-150");
+    roundShape.classList.add("-translate-x-130");
   }, 200);
 
   setTimeout(() => {

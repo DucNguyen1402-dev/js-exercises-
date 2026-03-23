@@ -304,28 +304,24 @@
   .border-collapse {
     border-collapse: collapse;
   }
-  .-translate-x-150 {
-    --tw-translate-x: calc(var(--spacing) * -150);
+  .-translate-x-120 {
+    --tw-translate-x: calc(var(--spacing) * -120);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .-translate-x-200 {
-    --tw-translate-x: calc(var(--spacing) * -200);
+  .-translate-x-130 {
+    --tw-translate-x: calc(var(--spacing) * -130);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-x-250 {
+    --tw-translate-x: calc(var(--spacing) * -250);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-300 {
     --tw-translate-x: calc(var(--spacing) * -300);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .-translate-x-400 {
-    --tw-translate-x: calc(var(--spacing) * -400);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-x-500 {
-    --tw-translate-x: calc(var(--spacing) * -500);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-x-800 {
-    --tw-translate-x: calc(var(--spacing) * -800);
+  .-translate-x-350 {
+    --tw-translate-x: calc(var(--spacing) * -350);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-x-5 {
@@ -340,16 +336,12 @@
     --tw-translate-x: 100%;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .-translate-y-200 {
-    --tw-translate-y: calc(var(--spacing) * -200);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-y-500 {
-    --tw-translate-y: calc(var(--spacing) * -500);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-y-full {
     --tw-translate-y: -100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-150 {
+    --tw-translate-y: calc(var(--spacing) * 150);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-y-200 {
@@ -678,6 +670,18 @@
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
+    }
+  }
+  .lg\:-translate-x-120 {
+    @media (width >= 64rem) {
+      --tw-translate-x: calc(var(--spacing) * -120);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .xl\:-translate-x-150 {
+    @media (width >= 80rem) {
+      --tw-translate-x: calc(var(--spacing) * -150);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
 }
