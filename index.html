@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>JS Exercises Collection</title>
-    <link rel="icon" type="image/x-icon" href="./src/icon/js.png"> 
+    <link rel="icon" type="image/x-icon" href="./src/icon/js.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -21,7 +21,9 @@
 
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
-  <body class="bg-slate-900 min-h-screen py-10 relative">
+  <body
+    class="bg-linear-to-br from-slate-900 via-slate-800 to-slate-700 min-h-screen py-10 relative overflow-x-hidden"
+  >
     <div class="flex gap-2 justify-center">
       <div class="overflow-hidden w-10">
         <img src="./src/img/exam.png" alt="exam icon" class="object-contain" />
@@ -326,7 +328,7 @@
           reset
         </button>
         <div
-          class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600  to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
+          class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
         >
           <h2 class="text-xl tracking-wide font-bold text-white text-center">
             05. SUM OF 2-DIGIT NUMBER
@@ -335,11 +337,12 @@
       </section>
     </main>
     <div id="backdrop" class="fixed inset-0 bg-slate-900/90 hidden z-40"></div>
+
     <div class="flex flex-col gap-2 absolute top-2 right-2 translate-x-5">
-      <span class="text-sm bg-indigo-600 px-4 py-3 rounded-l-full text-white"
+      <span class="text-sm bg-blue-600 px-4 py-3 rounded-l-full text-white"
         >Click a card to open it</span
       >
-      <span class="text-sm bg-indigo-600 px-4 py-3 rounded-l-full text-white"
+      <span class="text-sm bg-rose-600 px-4 py-3 rounded-l-full text-white"
         >Press ESC to close it</span
       >
     </div>

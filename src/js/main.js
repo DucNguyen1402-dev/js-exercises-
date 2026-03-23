@@ -24,22 +24,20 @@ cards.forEach((card) => {
     setTimeout(() => {
       card.classList.add("active-card");
       card.querySelector(".backdrop").classList.add("-translate-y-full");
-      document.body.classList.add("overflow-hidden"); 
+      document.body.classList.add("overflow-hidden");
     }, 10);
   });
 });
-
 
 function closeCard() {
   if (!activeCard) return;
 
   activeCard.classList.remove("active-card");
-   activeCard.querySelector(".backdrop").classList.remove("-translate-y-full");
+  activeCard.querySelector(".backdrop").classList.remove("-translate-y-full");
   activeCard.querySelector(".reset").click();
 
-  document.body.classList.remove("overflow-hidden"); // khi mở
+  document.body.classList.remove("overflow-hidden");
 
-  // remove placeholder
   if (placeholder) {
     placeholder.remove();
     placeholder = null;
@@ -50,7 +48,6 @@ function closeCard() {
     activeCard = null;
   }, 500);
 }
-
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeCard();
