@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     showCard(cardGuideClose);
-  }, 2500);
+  }, 3000);
 });
 
 let placeholder;
