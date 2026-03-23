@@ -29,18 +29,16 @@
         <img src="./src/img/exam.png" alt="exam icon" class="object-contain" />
       </div>
 
-      <h1 class="text-4xl font-bold text-center mb-8 tracking-wide text-white">
+      <h1 class="text-4xl font-bold text-center mb-16 tracking-wide text-white">
         My JS Exercises
       </h1>
     </div>
-    <main
-      class="flex flex-wrap justify-between items-center gap-5 max-w-7xl mx-auto"
-    >
+    <main class="grid grid-cols-3 place-items-center gap-10 max-w-5xl mx-auto">
       <!-- exercise 1 -->
       <section
-        class="card bg-white p-6 rounded-xl h-56 shadow-sm border border-slate-200 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+        class="card bg-slate-100 p-6 rounded-xl h-56 shadow-sm border-2 border-slate-100 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
       >
-        <p class="mb-8 text-gray-400">
+        <p class="mb-8 text-gray-500">
           Enter the number of working days to instantly calculate the total
           salary, based on a fixed daily rate of 100,000.
         </p>
@@ -48,7 +46,7 @@
           <input
             id="ex1_input"
             type="number"
-            class="w-full border-b-2 border-slate-300 focus:border-indigo-500 outline-none p-2 placeholder:text-gray-400"
+            class="w-full border-b-2 border-slate-300 focus:border-indigo-500 outline-none p-2 placeholder:text-gray-500"
             placeholder="Days worked"
           />
           <button
@@ -77,7 +75,7 @@
           class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
         >
           <h2
-            class="text-xl tracking-wide font-bold text-white mb-8 text-center"
+            class="text-lg tracking-wide font-bold text-white text-center px-2"
           >
             01. SALARY CALCULATOR
           </h2>
@@ -86,7 +84,7 @@
 
       <!-- exercise 2 -->
       <section
-        class="card bg-white relative p-6 rounded-xl h-64 shadow-sm border border-slate-200 mt-6 w-150 overflow-hidden transition-all duration-500 ease-in-out"
+        class="card bg-white relative p-6 rounded-xl h-64 shadow-sm border-2 border-slate-100 w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
       >
         <p class="mb-8 text-gray-400">
           Enter five numbers to quickly calculate their average value.
@@ -148,7 +146,9 @@
         <div
           class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
         >
-          <h2 class="text-xl tracking-wide font-bold text-white text-center">
+          <h2
+            class="text-lg tracking-wide font-bold text-white text-center px-2"
+          >
             02. CALCULATE AVERAGE
           </h2>
         </div>
@@ -156,7 +156,7 @@
 
       <!-- exercise 3 -->
       <section
-        class="card bg-white p-6 rounded-xl h-56 shadow-sm border border-slate-200 mt-6 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+        class="card bg-white p-6 rounded-xl h-56 shadow-sm border-2 border-slate-100 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
       >
         <p class="mb-8 text-gray-400">
           Enter the amount in USD to convert it into VND using a fixed exchange
@@ -195,7 +195,9 @@
         <div
           class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
         >
-          <h2 class="text-xl tracking-wide font-bold text-white text-center">
+          <h2
+            class="text-lg tracking-wide font-bold text-white text-center px-2"
+          >
             03. CURRENCY CONVERTED (USD TO VND)
           </h2>
         </div>
@@ -203,10 +205,10 @@
 
       <!-- exercise 4 -->
       <section
-        class="card bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6 h-68 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+        class="card bg-white p-6 rounded-xl shadow-sm border-2 border-slate-100 h-68 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
       >
         <p class="mb-8 text-gray-400">
-          Enter the length and width to calculate the rectangle’s perimeter and
+          Enter the length and width to calculate the rectangle's perimeter and
           area instantly.
         </p>
 
@@ -262,7 +264,9 @@
         <div
           class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
         >
-          <h2 class="text-xl tracking-wide font-bold text-white text-center">
+          <h2
+            class="text-lg tracking-wide font-bold text-white text-center px-2"
+          >
             04. RECTANGLE CALCULATOR
           </h2>
         </div>
@@ -270,7 +274,7 @@
 
       <!-- exercise 05 -->
       <section
-        class="card bg-white p-6 rounded-xl shadow-sm border border-slate-200 mt-6 h-50 relative w-150 overflow-hidden transition-all duration-500 ease-in-out"
+        class="card bg-white p-6 rounded-xl shadow-sm border-2 border-slate-100 h-50 relative w-150 overflow-hidden transition-all duration-500 ease-in-out closed-card will-change-transform"
       >
         <p class="mb-8 text-gray-400">
           Enter a two-digit number to calculate the sum of its digits.
@@ -330,19 +334,28 @@
         <div
           class="backdrop absolute flex items-center justify-center inset-0 bg-linear-to-br from-indigo-600 to-purple-600 z-40 transition duration-600 ease-linear rounded-xl"
         >
-          <h2 class="text-xl tracking-wide font-bold text-white text-center">
+          <h2
+            class="text-lg tracking-wide font-bold text-white text-center px-2"
+          >
             05. SUM OF 2-DIGIT NUMBER
           </h2>
         </div>
       </section>
     </main>
-    <div id="backdrop" class="fixed inset-0 bg-slate-900/90 hidden z-40"></div>
+    <div id="backdrop" class="fixed inset-0 bg-slate-900/90  hidden z-40"></div>
+    <div
+      class="fixed w-14 top-5 right-3 animate-bounce transition duration-2000  round-shape cursor-pointer"
+    >
+      <img src="./src/img/round-shape.png" alt="round shape icon" />
+    </div>
 
-    <div class="flex flex-col gap-2 absolute top-2 right-2 translate-x-5">
-      <span class="text-sm bg-blue-600 px-4 py-3 rounded-l-full text-white"
+    <div class="flex flex-col gap-2 absolute top-2 right-2">
+      <span
+        class="card-guide is-open text-sm bg-blue-600 pl-6 pr-4  py-3 rounded-l-full text-white translate-x-full transition-transform duration-2000 cursor-pointer"
         >Click a card to open it</span
       >
-      <span class="text-sm bg-rose-600 px-4 py-3 rounded-l-full text-white"
+      <span
+        class="card-guide is-collapsed text-sm bg-rose-600 pl-6 py-3 rounded-l-full text-white translate-x-full transition-transform duration-2000 cursor-pointer"
         >Press ESC to close it</span
       >
     </div>
