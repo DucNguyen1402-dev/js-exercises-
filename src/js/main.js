@@ -28,7 +28,15 @@ DOM.roundShape.addEventListener("click", function () {
 
 function toggleCardGuide(card) {
   card.classList.toggle("translate-x-[91%]");
+  card.classList.replace("duration-1000", "duration-1200");
+    card.classList.replace("ease-out", "ease-linear");
 }
+
+setTimeout(() => {
+  DOM.dogAnimations.forEach((dogAnimation) => {
+    dogAnimation.classList.add("animate-walk-across");
+  });
+}, 8000);
 
 DOM.cardGuideOpen.addEventListener("click", function () {
   toggleCardGuide(this);
@@ -47,7 +55,7 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     DOM.roundShape.classList.add("lg:-translate-x-250", "2xl:-translate-x-300");
-  }, 200);
+  }, 100);
 
   setTimeout(() => {
     showCard(DOM.cardGuideClose);

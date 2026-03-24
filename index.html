@@ -335,33 +335,38 @@
     </main>
     <div id="backdrop" class="fixed inset-0 bg-slate-900/90 hidden z-40"></div>
     <div
-      class="fixed w-14 top-5 right-3 animate-bounce transition duration-2000 round-shape cursor-pointer"
+      class="fixed w-14 top-5 right-3 animate-bounce transition duration-2000 ease-out round-shape cursor-pointer"
     >
       <img src="./src/img/round-shape.png" alt="round shape icon" />
     </div>
 
     <div class="flex flex-col gap-2 absolute top-2 right-2">
       <span
-        class="card-guide is-open text-sm bg-blue-600 pl-6 pr-4 py-3 rounded-l-full text-white translate-x-full transition-transform duration-2000 cursor-pointer"
+        class="card-guide is-open text-sm bg-blue-600 pl-6 pr-4 py-3 rounded-l-full text-white translate-x-full transition-transform duration-1000 ease-out cursor-pointer"
         >Click a card to open it</span
       >
       <span
-        class="card-guide is-collapsed text-sm bg-rose-600 pl-6 py-3 rounded-l-full text-white translate-x-full transition-transform duration-2000 cursor-pointer"
+        class="card-guide is-collapsed text-sm bg-rose-600 pl-6 py-3 rounded-l-full text-white translate-x-full transition-transform duration-1000 ease-out cursor-pointer"
         >Press ESC to close it</span
       >
     </div>
 
-    <dotlottie-wc
-      src="https://lottie.host/ba2161b2-ece2-49c4-8e49-bcdb837a5039/d5UhdciX9c.lottie"
-      autoplay
-      loop
-      class="dog__animation size-40 fixed -bottom-5 left-15 animate-walk-across"
-    ></dotlottie-wc>
-    <dotlottie-wc
-      src="https://lottie.host/c4629586-fd8b-4b98-ac9c-802ee3d08449/Fet0uysrxq.lottie"
-      class="dog__animation size-30 fixed -bottom-5 left-0 animate-walk-across"
-      autoplay
-      loop
-    ></dotlottie-wc>
+    <div class="dog__animation fixed -bottom-5 left-20 -translate-x-50">
+      <dotlottie-wc
+        src="https://lottie.host/ba2161b2-ece2-49c4-8e49-bcdb837a5039/d5UhdciX9c.lottie"
+        autoplay
+        class="size-40"
+        loop
+      ></dotlottie-wc>
+    </div>
+
+    <div class="dog__animation fixed -bottom-5 left-0 -translate-x-50">
+      <dotlottie-wc
+        src="https://lottie.host/c4629586-fd8b-4b98-ac9c-802ee3d08449/Fet0uysrxq.lottie"
+        class="size-35"
+        autoplay
+        loop
+      ></dotlottie-wc>
+    </div>
   </body>
 </html>

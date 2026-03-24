@@ -14,10 +14,10 @@
 
   @keyframes walk-across {
     from {
-      transform: translateX(-100px);
+      transform: translateX(0);
     }
     to {
-      transform: translateX(100vw);
+      transform: translateX(150vw);
     }
   }
 }
