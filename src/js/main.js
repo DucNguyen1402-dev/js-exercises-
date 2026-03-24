@@ -17,15 +17,6 @@ try {
   }
 }
 
-DOM.roundShape.addEventListener("click", function () {
-  const isActive = this.classList.toggle("translate-y-150");
-
-  this.classList.toggle("-translate-x-350", isActive);
-
-  this.classList.toggle("duration-1000", isActive);
-  this.classList.toggle("duration-2000", !isActive);
-});
-
 function toggleCardGuide(card) {
   card.classList.toggle("translate-x-[91%]");
   card.classList.replace("duration-1000", "duration-1200");
