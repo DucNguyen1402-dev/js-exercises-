@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
   showCard(DOM.cardGuideOpen);
 
   setTimeout(() => {
-    DOM.roundShape.classList.add("-translate-x-130");
+    DOM.roundShape.classList.add("-translate-x-250");
   }, 200);
 
   setTimeout(() => {
