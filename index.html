@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <title>JS Exercises Collection</title>
     <link rel="icon" type="image/x-icon" href="./src/icon/js.png" />
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.3/dist/dotlottie-wc.js"
+      type="module"
+    ></script>
+
     <link rel="stylesheet" href="./dist/output.css" />
 
     <script type="module" src="./src/js/main.js"></script>
@@ -15,7 +20,7 @@
   </head>
 
   <body
-    class="bg-linear-to-br from-slate-900 via-slate-800 to-slate-700 min-h-screen py-10 relative overflow-x-hidden"
+    class="bg-linear-to-br from-slate-900 via-slate-800 to-slate-700 min-h-screen py-10 relative overflow-hidden"
   >
     <div class="flex gap-2 justify-center">
       <div class="overflow-hidden w-10">
@@ -311,12 +316,6 @@
             >
           </div>
 
-          <button
-            id="trashIcon3"
-            class="hidden text-gray-600 cursor-pointer transition duration-200 hover:scale-110"
-          >
-            <span class="fa-solid fa-trash"></span>
-          </button>
         </div>
 
         <button
@@ -352,5 +351,19 @@
         >Press ESC to close it</span
       >
     </div>
+
+
+    <dotlottie-wc
+      src="https://lottie.host/ba2161b2-ece2-49c4-8e49-bcdb837a5039/d5UhdciX9c.lottie"
+      autoplay
+      loop
+      class="dog__animation size-40 fixed bottom-5 left-15 animate-walk-across"
+    ></dotlottie-wc>
+    <dotlottie-wc
+      src="https://lottie.host/c4629586-fd8b-4b98-ac9c-802ee3d08449/Fet0uysrxq.lottie"
+      class="dog__animation size-30 fixed bottom-5 left-0 animate-walk-across"
+      autoplay
+      loop
+    ></dotlottie-wc>
   </body>
 </html>

@@ -1,12 +1,23 @@
-const cards = [...document.querySelectorAll(".card")];
-const backdrop = document.getElementById("backdrop");
-const cardGuideOpen = document.querySelector(".card-guide.is-open");
-const cardGuideClose = document.querySelector(".card-guide.is-collapsed");
-const roundShape = document.querySelector(".round-shape");
+import { $, $$, ElementNotFoundError } from "./dom-system.js";
 
+const DOM = {};
 
+try {
+  DOM.cards = [...$$(".card")];
+  DOM.backdrop = $("#backdrop");
+  DOM.cardGuideOpen = $(".card-guide.is-open");
+  DOM.cardGuideClose = $(".card-guide.is-collapsed");
+  DOM.roundShape = $(".round-shape");
+  DOM.dogAnimations = [...$$(".dog__animation")];
+} catch (error) {
+  if (error instanceof ElementNotFoundError) {
+    console.error(error.message);
+  } else {
+    console.error("Something went wrong: ", error.message);
+  }
+}
 
-roundShape.addEventListener("click", function () {
+DOM.roundShape.addEventListener("click", function () {
   const isActive = this.classList.toggle("translate-y-150");
 
   this.classList.toggle("-translate-x-350", isActive);
@@ -15,15 +26,14 @@ roundShape.addEventListener("click", function () {
   this.classList.toggle("duration-2000", !isActive);
 });
 
-
 function toggleCardGuide(card) {
   card.classList.toggle("translate-x-[91%]");
 }
 
-cardGuideOpen.addEventListener("click", function () {
+DOM.cardGuideOpen.addEventListener("click", function () {
   toggleCardGuide(this);
 });
-cardGuideClose.addEventListener("click", function () {
+DOM.cardGuideClose.addEventListener("click", function () {
   toggleCardGuide(this);
 });
 
@@ -33,28 +43,28 @@ function showCard(el) {
 }
 
 window.addEventListener("load", () => {
-  showCard(cardGuideOpen);
+  showCard(DOM.cardGuideOpen);
 
   setTimeout(() => {
-    roundShape.classList.add("-translate-x-130");
+    DOM.roundShape.classList.add("-translate-x-130");
   }, 200);
 
   setTimeout(() => {
-    showCard(cardGuideClose);
+    showCard(DOM.cardGuideClose);
   }, 3000);
 });
 
 let placeholder;
 let activeCard = null;
 
-cards.forEach((card) => {
+DOM.cards.forEach((card) => {
   card.addEventListener("click", () => {
     if (activeCard) return;
 
     activeCard = card;
 
-    backdrop.classList.remove("hidden");
-    roundShape.classList.remove("animate-bounce");
+    DOM.backdrop.classList.remove("hidden");
+    DOM.roundShape.classList.remove("animate-bounce");
 
     // create placeholder
     const rect = card.getBoundingClientRect();
@@ -68,7 +78,10 @@ cards.forEach((card) => {
     setTimeout(() => {
       card.classList.add("active-card");
       card.querySelector(".backdrop").classList.add("-translate-y-full");
-      document.body.classList.add("overflow-hidden");
+      card.classList.remove("hover:-translate-y-4");
+      DOM.dogAnimations.forEach(
+        (dogAnimation) => (dogAnimation.style.animationPlayState = "paused"),
+      );
     }, 20);
   });
 });
@@ -80,11 +93,13 @@ function closeCard() {
   activeCard.querySelector(".backdrop").classList.remove("-translate-y-full");
   setTimeout(() => {
     activeCard.classList.remove("active-card");
+    activeCard.classList.add("hover:-translate-y-4");
     activeCard.querySelector(".reset").click();
-    roundShape.classList.add("animate-bounce");
+    DOM.roundShape.classList.add("animate-bounce");
+    DOM.dogAnimations.forEach(
+      (dogAnimation) => (dogAnimation.style.animationPlayState = "running"),
+    );
   }, 20);
-
-  document.body.classList.remove("overflow-hidden");
 
   if (placeholder) {
     placeholder.remove();
@@ -92,7 +107,7 @@ function closeCard() {
   }
 
   setTimeout(() => {
-    backdrop.classList.add("hidden");
+    DOM.backdrop.classList.add("hidden");
     activeCard = null;
   }, 500);
 }

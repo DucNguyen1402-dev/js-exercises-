@@ -1,17 +1,30 @@
-const btn = document.getElementById("ex3_btn");
-const resetBtn =  btn.closest(".card").querySelector(".reset");
-const display = document.getElementById("ex3_output");
-const input = document.getElementById("usd_input");
-// reset
-const reset = () =>{
-  display.innerText = "0 đ";
-  input.value = "";
+import { $, ElementNotFoundError } from "./dom-system.js";
+
+const DOM = {};
+
+try {
+  DOM.btn = $("#ex3_btn");
+  DOM.resetBtn = DOM.btn.closest(".card").querySelector(".reset");
+  DOM.display = $("#ex3_output");
+  DOM.input = $("#usd_input");
+} catch (error) {
+  if (error instanceof ElementNotFoundError) {
+    console.error(error.message);
+  } else {
+    console.error("Something went wrong: ", error.message);
+  }
 }
 
-resetBtn.addEventListener("click", reset);
+// reset
+const reset = () => {
+  DOM.display.innerText = "0 đ";
+  DOM.input.value = "";
+};
 
-btn.addEventListener("click", () => {
-  const usd = input.valueAsNumber;
+DOM.resetBtn.addEventListener("click", reset);
+
+DOM.btn.addEventListener("click", () => {
+  const usd = DOM.input.valueAsNumber;
   const exchangeRate = 26300;
 
   if (isNaN(usd) || usd < 0) {
@@ -22,7 +35,7 @@ btn.addEventListener("click", () => {
 
   const vnd = usd * exchangeRate;
 
-  display.innerText = `${vnd.toLocaleString("vi-VN", {
+  DOM.display.innerText = `${vnd.toLocaleString("vi-VN", {
     style: "currency",
     currency: "VND",
   })}`;

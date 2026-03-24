@@ -1,21 +1,34 @@
-const btn = document.getElementById("ex5_btn");
-const tens = document.getElementById("tens");
-const units = document.getElementById("units");
-const result = document.getElementById("result");
-const resetBtn =  btn.closest(".card").querySelector(".reset");
-const input = document.getElementById("num_input");
+import { $, ElementNotFoundError } from "./dom-system.js";
+
+const DOM = {};
+
+try {
+  DOM.btn = $("#ex5_btn");
+  DOM.resetBtn = DOM.btn.closest(".card").querySelector(".reset");
+
+  DOM.tens = $("#tens");
+  DOM.units = $("#units");
+  DOM.result = $("#result");
+  DOM.input = $("#num_input");
+} catch (error) {
+  if (error instanceof ElementNotFoundError) {
+    console.error(error.message);
+  } else {
+    console.error("Something went wrong: ", error.message);
+  }
+}
 
 const reset = () => {
-  tens.textContent = "0";
-  units.textContent = "0";
-  result.textContent = "0";
-  input.value = "";
+  DOM.tens.textContent = "0";
+  DOM.units.textContent = "0";
+  DOM.result.textContent = "0";
+  DOM.input.value = "";
 };
 
-resetBtn.addEventListener("click", reset);
+DOM.resetBtn.addEventListener("click", reset);
 
-btn.addEventListener("click", () => {
-  const number = parseInt(input.value);
+DOM.btn.addEventListener("click", () => {
+  const number = parseInt(DOM.input.valueAsNumber);
 
   if (isNaN(number) || number < 10 || number > 99) {
     alert("Please enter a valid 2-digit number (10-99)!");
@@ -26,7 +39,7 @@ btn.addEventListener("click", () => {
   const tensNumber = Math.floor(number / 10);
   const unitsNumber = number % 10;
 
-  tens.textContent = `${tensNumber}`;
-  units.textContent = `${unitsNumber}`;
-  result.textContent = `${tensNumber + unitsNumber}`;
+  DOM.tens.textContent = `${tensNumber}`;
+  DOM.units.textContent = `${unitsNumber}`;
+  DOM.result.textContent = `${tensNumber + unitsNumber}`;
 });

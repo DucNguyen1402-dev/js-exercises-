@@ -1,20 +1,32 @@
-const btn = document.getElementById("ex1_btn");
-const input = document.getElementById("ex1_input");
-const display = document.getElementById("ex1_output");
-const resetBtn = btn.closest(".card").querySelector(".reset");
+import { $, ElementNotFoundError } from "./dom-system.js";
+
+const DOM = {};
+
+try {
+  DOM.btn = $("#ex1_btn");
+  DOM.input = $("#ex1_input");
+  DOM.display = $("#ex1_output");
+  DOM.resetBtn = DOM.btn.closest(".card").querySelector(".reset");
+} catch (error) {
+  if (error instanceof ElementNotFoundError) {
+    console.error(error.message);
+  } else {
+    console.error("Something went wrong: ", error.message);
+  }
+}
 
 const RATE = 100000;
 
 const reset = () => {
-  display.innerText = "0 đ";
-  input.value = "";
+  DOM.display.innerText = "0 đ";
+  DOM.input.value = "";
 };
 
-resetBtn.addEventListener("click", reset);
+DOM.resetBtn.addEventListener("click", reset);
 
 // calculate
-btn.addEventListener("click", () => {
-  const days = input.valueAsNumber;
+DOM.btn.addEventListener("click", () => {
+  const days = DOM.input.valueAsNumber;
 
   if (Number.isNaN(days)) {
     alert("Your input value is not a number! Please Try again.");
@@ -28,7 +40,7 @@ btn.addEventListener("click", () => {
   }
 
   const salary = days * RATE;
-  display.innerText = `${salary.toLocaleString("vi-VN", {
+  DOM.display.innerText = `${salary.toLocaleString("vi-VN", {
     style: "currency",
     currency: "VND",
   })}`;
