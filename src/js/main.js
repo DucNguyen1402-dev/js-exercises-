@@ -9,6 +9,7 @@ try {
   DOM.cardGuideClose = $(".card-guide.is-collapsed");
   DOM.roundShape = $(".round-shape");
   DOM.dogAnimations = [...$$(".dog__animation")];
+  DOM.cardContainer = $(".card-container");
 } catch (error) {
   if (error instanceof ElementNotFoundError) {
     console.error(error.message);
@@ -17,10 +18,15 @@ try {
   }
 }
 
+
 function toggleCardGuide(card) {
-  card.classList.toggle("translate-x-[91%]");
   card.classList.replace("duration-1000", "duration-1200");
   card.classList.replace("ease-out", "ease-linear");
+  if (card.classList.contains("translate-x-5")) {
+    card.classList.replace("translate-x-5", "translate-x-[91%]");
+  } else {
+    card.classList.replace("translate-x-[91%]", "translate-x-5");
+  }
 }
 
 setTimeout(() => {
@@ -37,7 +43,7 @@ DOM.cardGuideClose.addEventListener("click", function () {
 });
 
 function showCard(el) {
-  el.classList.replace("translate-x-[110%]","translate-x-5")
+  el.classList.replace("translate-x-[110%]", "translate-x-5");
 }
 
 window.addEventListener("load", () => {
@@ -52,19 +58,23 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     showCard(DOM.cardGuideClose);
   }, 5000);
+});
 
+function handleFirstUserInteraction(cardGuide) {
   setTimeout(() => {
-    toggleCardGuide(DOM.cardGuideOpen);
-  }, 20000);
+    toggleCardGuide(cardGuide);
+  }, 1000);
+}
 
-  setTimeout(() => {
-    toggleCardGuide(DOM.cardGuideClose);
-  }, 20800);
+let isFirstCardClick = true;
+DOM.cardContainer.addEventListener("click", () => {
+  if (!isFirstCardClick) return;
+  isFirstCardClick = false;
+  handleFirstUserInteraction(DOM.cardGuideOpen);
 });
 
 let placeholder;
 let activeCard = null;
-
 DOM.cards.forEach((card) => {
   card.addEventListener("click", () => {
     if (activeCard) return;
@@ -125,10 +135,16 @@ function closeCard() {
 // ==========================
 
 // Handle global keydown (e.g. press ESC to close card)
+let isFirstESCPress = true;
 function handleGlobalKeydown(e) {
-  if (e.key === "Escape") {
-    closeCard();
-  }
+  if (e.key !== "Escape") return;
+
+  closeCard();
+
+  if (!isFirstESCPress) return;
+
+  isFirstESCPress = false;
+  handleFirstUserInteraction(DOM.cardGuideClose);
 }
 
 // ==========================
