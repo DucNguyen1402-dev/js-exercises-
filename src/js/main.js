@@ -20,14 +20,14 @@ try {
 function toggleCardGuide(card) {
   card.classList.toggle("translate-x-[91%]");
   card.classList.replace("duration-1000", "duration-1200");
-    card.classList.replace("ease-out", "ease-linear");
+  card.classList.replace("ease-out", "ease-linear");
 }
 
 setTimeout(() => {
   DOM.dogAnimations.forEach((dogAnimation) => {
     dogAnimation.classList.add("animate-walk-across");
   });
-}, 8000);
+}, 12000);
 
 DOM.cardGuideOpen.addEventListener("click", function () {
   toggleCardGuide(this);
@@ -37,20 +37,29 @@ DOM.cardGuideClose.addEventListener("click", function () {
 });
 
 function showCard(el) {
-  el.classList.remove("translate-x-full");
-  el.classList.add("translate-x-5");
+  el.classList.replace("translate-x-[110%]","translate-x-5")
 }
 
 window.addEventListener("load", () => {
-  showCard(DOM.cardGuideOpen);
+  setTimeout(() => {
+    showCard(DOM.cardGuideOpen);
+  }, 2000);
 
   setTimeout(() => {
     DOM.roundShape.classList.add("lg:-translate-x-250", "2xl:-translate-x-300");
-  }, 100);
+  }, 2100);
 
   setTimeout(() => {
     showCard(DOM.cardGuideClose);
-  }, 3000);
+  }, 5000);
+
+  setTimeout(() => {
+    toggleCardGuide(DOM.cardGuideOpen);
+  }, 20000);
+
+  setTimeout(() => {
+    toggleCardGuide(DOM.cardGuideClose);
+  }, 20800);
 });
 
 let placeholder;
