@@ -1,23 +1,36 @@
 import { $, $$, ElementNotFoundError } from "./dom-system.js";
 
-const DOM = {};
-
-try {
-  DOM.cards = [...$$(".card")];
-  DOM.backdrop = $("#backdrop");
-  DOM.cardGuideOpen = $(".card-guide.is-open");
-  DOM.cardGuideClose = $(".card-guide.is-collapsed");
-  DOM.roundShape = $(".round-shape");
-  DOM.dogAnimations = [...$$(".dog__animation")];
-  DOM.cardContainer = $(".card-container");
-} catch (error) {
-  if (error instanceof ElementNotFoundError) {
-    console.error(error.message);
-  } else {
-    console.error("Something went wrong: ", error.message);
+/** 
+ * ==========================
+ *    0. DOM SETUP
+ * ==========================
+ */
+const DOM = (() => {
+  try {
+    return {
+      cards: [...$$(".card")],
+      backdrop: $("#backdrop"),
+      cardGuideOpen: $(".card-guide.is-open"),
+      cardGuideClose: $(".card-guide.is-collapsed"),
+      roundShape: $(".round-shape"),
+      dogAnimations: [...$$(".dog__animation")],
+      cardContainer: $(".card-container"),
+    };
+  } catch (error) {
+    if (error instanceof ElementNotFoundError) {
+      console.error(error.message);
+    } else {
+      console.error("Something went wrong: ", error.message);
+    }
   }
-}
+})();
 
+
+/** 
+ * ==============================
+ *    1. CARD GUIDE TOGGLE 
+ * ============================
+ */
 
 function toggleCardGuide(card) {
   card.classList.replace("duration-1000", "duration-1200");
@@ -60,6 +73,7 @@ window.addEventListener("load", () => {
   }, 5000);
 });
 
+
 function handleFirstUserInteraction(cardGuide) {
   setTimeout(() => {
     toggleCardGuide(cardGuide);
@@ -73,6 +87,16 @@ DOM.cardContainer.addEventListener("click", () => {
   handleFirstUserInteraction(DOM.cardGuideOpen);
 });
 
+
+
+/** 
+ * ================================
+ *    2. EXERCISE CARD ANIMATION 
+ * ===============================
+ */
+
+
+/* ======== 2.1 OPEN CARD ========= */
 let placeholder;
 let activeCard = null;
 DOM.cards.forEach((card) => {
@@ -104,6 +128,9 @@ DOM.cards.forEach((card) => {
   });
 });
 
+
+/* ======== 2.2 CLOSE CARD ========= */
+
 function closeCard() {
   if (!activeCard) return;
 
@@ -130,9 +157,9 @@ function closeCard() {
   }, 500);
 }
 
-// ==========================
-// GLOBAL KEYBOARD EVENTS
-// ==========================
+
+
+/* ======== 2.3 GLOBAL KEYBOARD EVENTS  ========= */
 
 // Handle global keydown (e.g. press ESC to close card)
 let isFirstESCPress = true;
@@ -147,9 +174,18 @@ function handleGlobalKeydown(e) {
   handleFirstUserInteraction(DOM.cardGuideClose);
 }
 
-// ==========================
-// INPUT NUMBER BEHAVIOR
-// ==========================
+
+
+/** 
+ * ================================
+ *    3. INPUT NUMBER BEHAVIOR 
+ * ===============================
+ */
+
+
+
+/* ======== 3.1 INPUT NUMBER BEHAVIOR ============ */
+
 
 // Disable scroll (mouse wheel) on input[type="number"]
 function disableNumberScroll(input) {
@@ -167,9 +203,9 @@ function preventInvalidNumberInput(input) {
   });
 }
 
-// ==========================
-// SETUP FUNCTIONS
-// ==========================
+
+/* ======== 3.2 SETUP FUNCTIONS ============ */
+
 
 // Initialize all number inputs with custom behavior
 function setupNumberInputs() {
@@ -181,9 +217,7 @@ function setupNumberInputs() {
   });
 }
 
-// ==========================
-// APP ENTRY POINT
-// ==========================
+/* ======== 3.2 APP ENTRY POINT ============ */
 
 // Initialize application
 function init() {

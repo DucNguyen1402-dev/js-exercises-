@@ -24,7 +24,6 @@ const reset = () => {
 
 DOM.resetBtn.addEventListener("click", reset);
 
-// calculate
 DOM.btn.addEventListener("click", () => {
   const days = DOM.input.valueAsNumber;
 
